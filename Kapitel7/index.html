@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script type="text/javascript">
+
+            window.addEventListener('load', () => {
+                let element = document.querySelector('div.klasse1');
+                console.log(element);
+
+                let elements = document.querySelectorAll('div.klasse1');
+                console.log(elements);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="eindeutig">
+            Dieses Element hat eine id
+        </div>
+        <div class="klasse1 klasse2">
+            Dieses Element hat zwei Klassen
+        </div>
+        <div class="klasse1" name="mehrdeutig">
+            Dieses Element hat einen Namen und eine Klasse
+        </div>
+        <div name="mehrdeutig">
+            Dieses Element hat ebenfalls einen Namen
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const textbox = document.getElementById('textbox');
+
+                textbox.addEventListener('keypress', tasteGedrueckt);
+            });
+
+            function tasteGedrueckt(event) {
+                console.log(`Taste gedrückt: ${event.key}`);
+
+                if (event.key === 't' || event.key === 'T') {
+                    event.preventDefault();
+                }
+            }
+        </script>        
+    </head>
+<body>
+    <input type="text" id="textbox" />
+</body>
+</html>
