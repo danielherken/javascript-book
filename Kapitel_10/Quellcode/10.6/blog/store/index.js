@@ -1,56 +1,45 @@
 export const state = () => ({
   posts: [],
-  authors: [],
-  comments: [],
-});
+  users: []
+})
+
+export const mutations = {
+  setPosts(state, posts) {
+    state.posts = posts;
+  },
+  setUsers(state, users) {
+    state.users = users;
+  }
+}
 
 export const getters = {
   allPosts(state) {
     return state.posts;
   },
   allAuthors(state) {
-    return state.authors;
-  },
-  allComments(state) {
-    return state.comments;
-  },
-};
-
-export const mutations = {
-  setPosts(state, posts) {
-    state.posts = posts;
-  },
-  setAuthors(state, authors) {
-    state.authors = authors;
-  },
-  addComments(state, { postId, comments }) {
-    // Der sogenannte Spread Operator kopiert den kompletten Array
-    // state.comments in ein neues Array
-    const newComments = [...state.comments];
-    newComments[postId] = comments;
-
-    state.comments = newComments;
-  },
-};
+    return state.users;
+  }
+}
 
 export const actions = {
-  async loadInitialData({ commit }) {
+  async nuxtServerInit({ commit }, { req }) {
+
+    let posts = [];
     try {
-      const posts = await this.$axios.get(
-        'https://jsonplaceholder.typicode.com/posts'
-      );
-      commit('setPosts', posts.data);
+      posts = await this.$axios.$get('http://localhost:3001/posts');
     } catch (e) {
       console.error(e);
+    } finally {
+      commit('setPosts', posts);
     }
 
+    let users = [];
     try {
-      const authors = await this.$axios.get(
-        'https://jsonplaceholder.typicode.com/users'
-      );
-      commit('setAuthors', authors.data);
+      users = await this.$axios.$get('http://localhost:3001/users');
     } catch (e) {
       console.error(e);
+    } finally {
+      commit('setUsers', users);
     }
   },
-};
+}
