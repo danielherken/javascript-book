@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script type="text/javascript">
+
+            window.addEventListener('load', () => {
+                let klasse1 = document.getElementsByClassName('klasse1');
+                console.log('Elemente mit der Class "klasse1":');
+                console.log(klasse1);
+
+                let klasse2 = document.getElementsByClassName('klasse2');
+                console.log('Elemente mit der Class "klasse2":');
+                console.log(klasse2);   
+            });
+        </script>
+    </head>
+    <body>
+        <div class="klasse1 klasse2">
+            Dieses Element gehört zu klasse1 und klasse2
+        </div>
+        <div class="klasse1">
+            Dieses Element gehört nur zu klasse 1
+        </div>
+    </body>
+</html>

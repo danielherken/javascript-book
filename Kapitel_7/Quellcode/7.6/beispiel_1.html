@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const address = document.getElementById('address');
+                address.innerText = window.location;
+
+                const btn = document.getElementById('navigate');
+                btn.addEventListener('click', () => {
+                    window.location = 'http://www.google.de';
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="address"></div>
+        <button id="navigate">
+            Zu Google
+        </button>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const canvas = document.getElementById('canvas');
+                const image = document.getElementById('image');
+
+                if (canvas.getContext) {
+                    const context = canvas.getContext('2d');
+
+                    context.strokeStyle = 'red';
+                    context.beginPath();
+                    context.arc(75, 75, 50, 0, Math.PI * 2, true); 
+                    context.closePath();
+                    context.stroke();
+                    
+                    context.strokeStyle = 'blue';
+                    context.beginPath();
+                    context.arc(75, 75, 35, 0, Math.PI, false);  
+                    context.closePath();
+                    context.stroke();
+
+                    context.strokeStyle = 'green';
+                    context.beginPath();
+                    context.arc(60, 65, 5, 0, Math.PI * 2, true); 
+                    context.closePath();
+                    context.stroke();
+
+                    context.strokeStyle = 'black';
+                    context.beginPath();
+                    context.arc(90, 65, 5, 0, Math.PI * 2, true);  
+                    context.closePath();
+                    context.stroke();
+
+                }            
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" height="800" width="800">
+        </canvas>
+    </body>
+</html>

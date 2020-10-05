@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const back = document.getElementById('back');
+                back.addEventListener('click', () => {
+                    history.back();
+                });
+
+                const forward = document.getElementById('forward');
+                forward.addEventListener('click', () => {
+                    history.forward();
+                });
+
+                const go = document.getElementById('go');
+                go.addEventListener('click', () => {
+                    history.go(-2);
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <button id="back">Zurück</button>
+            <button id="forward">Weiter</button>
+            <button id="go">Go</button>
+        </div>
+    </body>
+</html>

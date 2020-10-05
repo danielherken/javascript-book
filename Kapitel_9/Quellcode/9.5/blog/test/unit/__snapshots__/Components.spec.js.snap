@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comments is handling empty list of comments 1`] = `
+<div
+  class="col-12"
+>
+  <h4>
+    
+    comments
+  
+  </h4>
+   
+  <button
+    class="btn btn-secondary"
+    type="button"
+  >
+    
+    refresh
+  
+  </button>
+   
+  <ul />
+</div>
+`;
+
+exports[`Comments is handling refresh correctly 1`] = `
+<div
+  class="col-12"
+>
+  <h4>
+    
+    comments
+  
+  </h4>
+   
+  <button
+    class="btn btn-secondary"
+    type="button"
+  >
+    
+    refresh
+  
+  </button>
+   
+  <ul>
+    <li>
+      <span>
+        
+        Testname
+      
+      </span>
+       
+      <b>
+        
+        says
+      
+      </b>
+       
+      <p>
+        
+        Testbody
+      
+      </p>
+    </li>
+    <li>
+      <span>
+        
+        Testname
+      
+      </span>
+       
+      <b>
+        
+        says
+      
+      </b>
+       
+      <p>
+        
+        Testbody
+      
+      </p>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Comments is showing comments 1`] = `
+<div
+  class="col-12"
+>
+  <h4>
+    
+    comments
+  
+  </h4>
+   
+  <button
+    class="btn btn-secondary"
+    type="button"
+  >
+    
+    refresh
+  
+  </button>
+   
+  <ul>
+    <li>
+      <span>
+        
+        Testname
+      
+      </span>
+       
+      <b>
+        
+        says
+      
+      </b>
+       
+      <p>
+        
+        Testkommentar
+      
+      </p>
+    </li>
+    <li>
+      <span>
+        
+        Testname
+      
+      </span>
+       
+      <b>
+        
+        says
+      
+      </b>
+       
+      <p>
+        
+        Testkommentar
+      
+      </p>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const state = document.getElementById('state');
+                state.innerText = history.state;
+
+                const setState = document.getElementById('setState');
+                setState.addEventListener('click', () => {
+                    history.pushState({ id: 14, text: 'Test' }, '', 'test.html');
+                    // history.replaceState({ id: 14, text: 'Test' }, '', 'test.html');
+                });
+            });
+
+            window.addEventListener('popstate', () => {
+                console.log(history.state);
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            State: <span id="state"></span>
+        </div>
+        <div>
+            <button id="setState">Set State</button>
+        </div>
+    </body>
+</html>

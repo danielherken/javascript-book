@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const standard = document.getElementById('standard');
+                const ohne = document.getElementById('ohne');
+
+                standard.addEventListener('click', (event) => console.log('Standard Link geklickt'));
+                ohne.addEventListener('click', (event) => { console.log('Eigener Link geklickt'); event.preventDefault() });
+            });
+        </script>        
+    </head>
+<body>
+    <a href="http://www.example.com" id="standard">Mit Standardaktion</a>
+    <br/>
+    <a href="http://www.example.com" id="ohne">Ohne Standardaktion</a>
+</body>
+</html>

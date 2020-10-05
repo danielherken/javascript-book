@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const canvas = document.getElementById('canvas');
+                const image = document.getElementById('image');
+
+                if (canvas.getContext) {
+                    const context = canvas.getContext('2d');
+
+                    context.fillStyle = 'red';
+                    context.beginPath();
+                    context.ellipse(340, 175, 50, 30, Math.PI * .25, 0, Math.PI, true);
+                    context.closePath();
+                    context.fill();
+
+                    context.strokeStyle = 'green';
+                    context.beginPath();
+                    context.moveTo(30, 30);
+                    context.bezierCurveTo(120, 160, 180, 10, 220, 140);
+                    context.stroke();
+                    context.closePath();
+
+                    context.strokeStyle = 'blue';
+                    context.beginPath();
+                    context.moveTo(120, 310);
+                    context.quadraticCurveTo(330, 450, 350, 320);
+                    context.stroke();
+                    context.closePath();
+                }            
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" height="800" width="800">
+        </canvas>
+    </body>
+</html>

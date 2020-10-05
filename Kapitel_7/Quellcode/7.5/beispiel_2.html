@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                // Ersten Frame vormerken
+                window.requestAnimationFrame(drawFrame);                                    
+            });
+
+            function drawFrame() {
+                const canvas = document.getElementById('uhr');
+                const context = canvas.getContext('2d');
+
+                const jetzt = new Date();
+
+                context.save();              
+
+                // Canvas Element löschen
+                context.clearRect(0, 0, 150, 150);
+
+                context.translate(75, 75);
+                context.scale(0.4, 0.4);
+                context.rotate(-Math.PI / 2);
+                context.strokeStyle = 'black';
+                context.fillStyle = 'white';
+                context.lineWidth = 8;
+                context.lineCap = 'round';
+
+                context.beginPath();
+                context.lineWidth = 14;
+                context.strokeStyle = '#000000';
+                context.arc(0, 0, 132, 0, Math.PI * 2, true);
+                context.stroke();
+
+                context.restore();                
+
+                // Nächsten Frame vormerken
+                window.requestAnimationFrame(drawFrame);
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="uhr" width="150" height="150"></canvas>
+    </body>
+</html>

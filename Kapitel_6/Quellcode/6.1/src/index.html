@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Der Title -->
+        <title>JS ToDo</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body>
+        <section class="todoapp">
+            <header>
+                <h1>ToDos</h1>
+                <input id="neuesToDo" 
+                       placeholder="Neues ToDo erstellen"
+                       autofocus/>
+            </header>
+            <section class="todos">
+                <ul id="todolist">
+                    <li>
+                        <div>
+                            <input type="checkbox" class="erledigt"/>
+                            <span>Bananen kaufen</span>
+                            <button class="loeschen">X</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="erledigt"/>
+                            <span>Äpfel kaufen</span>
+                            <button class="loeschen">X</button>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" class="erledigt"/>
+                            <span>Gurke kaufen</span>
+                            <button class="loeschen">X</button>
+                        </div>
+                    </li>                                
+                </ul>
+            </section>
+            <footer>
+                <span id="anzahl">2 ToDos offen</span>
+                <button id="aufraeumen">Lösche erledigte</button>
+            </footer>
+        </section>
+    </body>
+</html>

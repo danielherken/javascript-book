@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function validateForm() {
+                let errors = '';
+
+                const email = document.getElementById('email');
+                const vorname = document.getElementById('vorname');
+                const nachname = document.getElementById('nachname');   
+
+                errors += validateField(email, 'EMail');             
+                errors += validateField(vorname, 'Vorname');
+                errors += validateField(nachname, 'Nachname');
+
+                const errorDiv = document.getElementById('errors');
+                errorDiv.innerHTML = errors;
+            }
+
+            function validateField(field, name) {
+                if (field.checkValidity()) {
+                    return '';
+                }
+
+                const status = field.validity;
+
+                if (status.valueMissing) {
+                    return `Bitte Wert für ${name} eingeben!<br/>`;
+                } else if (status.tooLong) {
+                    return `Bitte Wert für ${name} abkürzen!<br/>`;
+                } else if (status.typeMismatch) {
+                    return `Bitte Wert für ${name} korrigieren!<br/>`;
+                } else {
+                    return `Unbekannter Fehler für ${name}!<br/>`;
+                }
+            }
+
+            window.addEventListener('load', () => {
+                const email = document.getElementById('email');
+                const vorname = document.getElementById('vorname');
+                const nachname = document.getElementById('nachname');
+
+                email.addEventListener('blur', validateForm);
+                vorname.addEventListener('blur', validateForm);
+                nachname.addEventListener('blur', validateForm);
+            });
+        </script>  
+    </head>
+    <body>
+        <div id="errors"></div>
+        <form>
+            <div>
+                <input type="email" id="email" required />
+            </div>
+            <div>
+                <input type="text" id="vorname" maxlength="256" required />
+            </div>
+            <div>
+                <input type="text" id="nachname" maxlength="255" required />
+            </div>
+            <div>
+                <input type="submit" />
+            </div>
+        </form>
+    </body>
+</html>

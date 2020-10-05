@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const li = document.getElementById('li');
+                const btn = document.getElementById('btn');
+
+                btn.addEventListener('click', (event) => logEvent('Capture Phase (Button)', event), true);
+                btn.addEventListener('click', (event) => { logEvent('Target-Phase (Button)', event); event.stopPropagation() });
+
+                li.addEventListener('click', (event) => logEvent('Capture Phase (LI)', event), true);
+                li.addEventListener('click', (event) => logEvent('Bubble Phase (LI)', event));
+            });
+
+            function logEvent(text, event) {
+                console.log(text);
+                console.log(event);
+            }
+        </script>        
+    </head>
+<body>
+    <ul>
+        <li id="li">
+            <button id="btn">Test</button>
+        </li>
+    </ul>
+</body>
+</html>

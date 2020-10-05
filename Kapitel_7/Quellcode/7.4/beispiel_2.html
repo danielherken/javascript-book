@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const canvas = document.getElementById('canvas');
+
+                if (canvas.getContext) {
+                    const context = canvas.getContext('2d');
+
+                    context.fillStyle = '#000000';
+                    context.fillRect(10, 10, 100, 100);
+
+                    context.strokeStyle = '#4287f5';
+                    context.strokeRect(10, 200, 100, 100);
+
+                    context.clearRect(5, 80, 150, 150);
+                }            
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" height="800" width="800">
+        </canvas>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const canvas = document.getElementById('canvas');
+                const image = document.getElementById('image');
+
+                if (canvas.getContext) {
+                    const context = canvas.getContext('2d');
+
+                    context.beginPath();
+                    context.arc(200, 200, 50, 0, 2 * Math.PI);
+                    context.closePath();
+                    context.stroke();
+
+                    context.beginPath();
+                    context.arc(300, 300, 50, Math.PI, 2 * Math.PI);
+                    context.closePath();
+                    context.fill();
+
+                    context.strokeStyle = 'red';
+
+                    context.beginPath();
+                    context.moveTo(230, 20);
+                    context.arcTo(90, 130, 20, 20, 50);
+                    context.lineTo(20, 20);
+                    context.stroke();
+                }  
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" height="800" width="800">
+        </canvas>
+    </body>
+</html>

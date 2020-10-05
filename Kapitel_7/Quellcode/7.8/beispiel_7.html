@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#randomize').on('click', function() {
+          randomizeItems();
+        });
+      });
+
+      function randomizeItems() {
+        $('#headline').text('Randomized!');        
+        $('li.target').each(function(index, value) {
+          value.innerText = 'item #' + getRandomInt(0, 5);
+        });        
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }      
+    </script>
+  </head>
+  <body>
+    <h1 id="headline">Headline</h1>
+    <ul>
+      <li class="target">item #1</li>
+      <li class="target">item #2</li>
+      <li class="target">item #3</li>
+      <li class="target">item #4</li>
+      <li class="target">item #5</li>
+      <li>Other Item</li>
+    </ul>
+    <button id="randomize">Randomize Items</button>
+  </body>
+</html>

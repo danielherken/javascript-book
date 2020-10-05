@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script type="text/javascript">
+
+            window.addEventListener('load', () => {
+                let namen = document.getElementsByName('mehrdeutig');
+                console.log('Elemente mit name Attribute:')
+                console.log(namen);
+            });
+        </script>
+    </head>
+    <body>
+        <div class="klasse1" name="mehrdeutig">
+            Dieses Element hat einen Namen und eine Klasse
+        </div>
+        <div name="mehrdeutig">
+            Dieses Element hat ebenfalls einen Namen
+        </div>    
+    </body>
+</html>
