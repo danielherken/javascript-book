@@ -24,37 +24,30 @@ describe('Home', () => {
   test('can switch between pages', async () => {
     await page.goto('http://localhost:3000/');
 
+    // Aktuell angezeigten Titel merken
     const title = await page.$eval('h2', (e) => e.innerText);
 
+    // Buttons herrausfiltern
     const buttons = await page.$$('button');
 
-    // Go to next
+    // Auf die zweite Seite wechseln
     await buttons[1].click();
 
+    // Prüfen, ob der Titel des ersten angezeigten Beitrages 
+    // nun abweicht
     const title2 = await page.$eval('h2', (e) => e.innerText);
-
     expect(title).not.toBe(title2);
 
-    // Go back
+    // Zurück auf die erste Seite wechseln
     await buttons[0].click();
 
+    // Prüfen, ob der angezeigte Titel nun wieder mit dem 
+    // gespeicherten übereinstimmt
     const title3 = await page.$eval('h2', (e) => e.innerText);
     expect(title3).toBe(title);
   });
 
   test('can open the details of a post', async () => {
     await page.goto('http://localhost:3000/');
-
-    // Ersten Titel merken
-    const title = await page.$eval('h2', (e) => e.innerText);
-
-    // Auf die Überschrift des ersten Beitrags klicken
-    const links = await page.$$('h2');
-    await links[0].click();
-
-    // Prüfen, ob der nun angezeigte Titel mit dem vorher
-    // gemerkten Titel übereinstimmt
-    const details = await page.$eval('h2', (e) => e.innerText);
-    expect(details).toBe(title);
   });
 });
