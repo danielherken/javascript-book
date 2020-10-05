@@ -1,7 +1,7 @@
 <template>
   <div class="col-12">
     <h4>
-      <b-icon icon="arrow-clockwise" @click="refresh" />
+      <b-button @click="refresh">Refresh</b-button>
       {{ $t('comments') }}
     </h4>
     <ul>

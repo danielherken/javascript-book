@@ -72,6 +72,26 @@ app.post('/comments', (req, res) => {
   }
 });
 
+app.post('/posts', (req, res) => {
+  log.debug('POST /posts with ', req.body);
+
+  try {
+    const post = new Post(0, req.body.title, req.body.body, req.body.userId);
+
+    if (dataAccess.addPost(post)) {
+      log.info('New Post created ', post);
+      res.status(201);
+      return res.send();
+    } else {
+      log.warn('Post is not valid ', post);
+      res.status(406);    
+      return res.send();
+    }  
+  } catch (e) {
+    log.error('Error creating new post', e);
+  }
+});
+
 app.delete('/comments/:id', (req, res) => {
   log.debug('DELETE /comments with', req.params.id);
 

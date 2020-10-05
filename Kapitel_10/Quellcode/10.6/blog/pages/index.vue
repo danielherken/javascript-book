@@ -39,7 +39,6 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('loadInitialData');
     this.switchPage();
   },
   methods: {

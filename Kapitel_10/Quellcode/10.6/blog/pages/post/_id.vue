@@ -13,9 +13,6 @@ export default {
   computed: {
     ...mapGetters(['allPosts']),
   },
-  created() {
-    this.$store.dispatch('loadInitialData');
-  },
   methods: {
     getPost() {
       return this.allPosts.find((o) => o.id == this.$route.params.id);

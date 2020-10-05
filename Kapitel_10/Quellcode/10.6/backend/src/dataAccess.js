@@ -59,6 +59,12 @@ export class DataAccess {
     return result.changes > 0;
   }
 
+  addPost(post) {
+    const result = this.db.prepare('INSERT INTO posts (title, body, userId) VALUES (?, ?, ?)').run(post.title, post.body, post.authorId);
+
+    return result.changes > 0;
+  }  
+
   deleteComment(id) {
     const result = this.db.prepare('DELETE FROM COMMENTS WHERE id = ?').run(id);
     return result.changes > 0;
