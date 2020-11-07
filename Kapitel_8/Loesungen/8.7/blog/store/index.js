@@ -36,6 +36,8 @@ export const actions = {
       body: 'quia et suscipit suscipit'
     }];
 
+    commit('setPosts', posts);
+
     const authors = [
       {
         id: 1,
