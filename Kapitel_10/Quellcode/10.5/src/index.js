@@ -3,7 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
 import { DataAccess } from './dataAccess';
-import { Post } from './models/posts';
+import { Post } from './models/post';
 import { User } from './models/user';
 import { Comment } from './models/comment';
 import { createSimpleLogger } from 'simple-node-logger';
