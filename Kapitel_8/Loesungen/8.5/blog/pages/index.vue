@@ -29,7 +29,31 @@ export default {
           id: 2, 
           title: 'Test Post #2', 
           body: 'quia et suscipit suscipit recusandae' 
-        }
+        },
+        { 
+          userId: 1, 
+          id: 3, 
+          title: 'Test Post #3', 
+          body: 'quia et suscipit suscipit recusandae' 
+        },
+        { 
+          userId: 1, 
+          id: 4, 
+          title: 'Test Post #4', 
+          body: 'quia et suscipit suscipit recusandae' 
+        },
+        { 
+          userId: 1, 
+          id: 5, 
+          title: 'Test Post #5', 
+          body: 'quia et suscipit suscipit recusandae' 
+        },
+        { 
+          userId: 1, 
+          id: 6, 
+          title: 'Test Post #6', 
+          body: 'quia et suscipit suscipit recusandae' 
+        }                                
       ]
     }
   },
